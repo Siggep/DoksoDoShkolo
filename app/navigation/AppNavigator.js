@@ -40,7 +40,7 @@ const AppNavigator = () => (
       })}
     />
     <Tab.Screen
-      name="Account"
+      name="Mitt Konto"
       component={AccountNavigator}
       options={{
         tabBarIcon: ({ color, size }) => (
