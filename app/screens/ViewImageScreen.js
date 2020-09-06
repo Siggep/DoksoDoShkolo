@@ -8,13 +8,11 @@ function ViewImageScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <View style={styles.closeIcon}>
-        <MaterialCommunityIcons name="close" color="white" size={35} />
-      </View>
-      <View style={styles.deleteIcon}>
         <MaterialCommunityIcons
-          name="trash-can-outline"
+          name="close"
           color="white"
-          size={35}
+          size={40}
+          onPress={() => navigation.goBack()}
         />
       </View>
       <Image
@@ -29,17 +27,13 @@ function ViewImageScreen({ navigation }) {
 const styles = StyleSheet.create({
   closeIcon: {
     position: "absolute",
-    top: 40,
-    left: 30,
+    top: 45,
+    left: 20,
+    zIndex: 1,
   },
   container: {
     backgroundColor: colors.black,
     flex: 1,
-  },
-  deleteIcon: {
-    position: "absolute",
-    top: 40,
-    right: 30,
   },
   image: {
     width: "100%",
