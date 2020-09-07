@@ -17,7 +17,7 @@ const menuItems = [
     targetScreen: routes.MY_LISTINGS,
   },
   {
-    title: "Mitt Konto",
+    title: "Inställningar",
     icon: {
       name: "settings",
       backgroundColor: colors.secondary,

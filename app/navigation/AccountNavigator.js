@@ -8,9 +8,9 @@ const Stack = createStackNavigator();
 
 const AccountNavigator = () => (
   <Stack.Navigator>
-    <Stack.Screen name="Account" component={AccountScreen} />
-    <Stack.Screen name="MyAccount" component={MyAccountScreen} />
-    <Stack.Screen name="MyListings" component={MyListingsScreen} />
+    <Stack.Screen name="Mitt Konto" component={AccountScreen} />
+    <Stack.Screen name="Inställningar" component={MyAccountScreen} />
+    <Stack.Screen name="Mina Enheter" component={MyListingsScreen} />
   </Stack.Navigator>
 );
 
