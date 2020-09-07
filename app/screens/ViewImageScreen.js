@@ -4,7 +4,9 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import colors from "../config/colors";
 
-function ViewImageScreen({ navigation }) {
+function ViewImageScreen({ navigation, route }) {
+  const listing = route.params;
+
   return (
     <View style={styles.container}>
       <View style={styles.closeIcon}>
@@ -15,11 +17,13 @@ function ViewImageScreen({ navigation }) {
           onPress={() => navigation.goBack()}
         />
       </View>
-      <Image
-        resizeMode="contain"
-        style={styles.image}
-        source={require("../assets/chair.jpg")}
-      />
+      <View>
+        <Image
+          resizeMode="contain"
+          style={styles.image}
+          source={listing.image}
+        />
+      </View>
     </View>
   );
 }
