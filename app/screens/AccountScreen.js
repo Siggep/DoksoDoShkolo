@@ -9,19 +9,20 @@ import Screen from "../components/Screen";
 
 const menuItems = [
   {
-    title: "My Listings",
+    title: "Mina Enheter",
     icon: {
       name: "format-list-bulleted",
       backgroundColor: colors.primary,
     },
+    targetScreen: routes.MY_LISTINGS,
   },
   {
-    title: "My Messages",
+    title: "Mitt Konto",
     icon: {
-      name: "email",
+      name: "settings",
       backgroundColor: colors.secondary,
     },
-    targetScreen: routes.MESSAGES,
+    targetScreen: routes.MY_ACCOUNT,
   },
 ];
 
@@ -55,7 +56,7 @@ function AccountScreen({ navigation }) {
         />
       </View>
       <ListItem
-        title="Log Out"
+        title="Logga ut"
         IconComponent={<Icon name="logout" backgroundColor="#ffe66d" />}
       />
     </Screen>

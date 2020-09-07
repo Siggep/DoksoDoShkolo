@@ -3,6 +3,7 @@ export default Object.freeze({
   VIEW_IMAGE: "ViewImageScreen",
   LISTING_EDIT: "ListingEdit",
   LOGIN: "Login",
-  MESSAGES: "Messages",
+  MY_ACCOUNT: "MyAccount",
   REGISTER: "Register",
+  MY_LISTINGS: "MyListings",
 });
