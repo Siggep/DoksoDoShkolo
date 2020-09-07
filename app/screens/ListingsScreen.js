@@ -9,14 +9,18 @@ import Screen from "../components/Screen";
 const listings = [
   {
     id: 1,
-    title: "Red jacket for sale",
-    price: 100,
+    title: "Vacker & charmig bostad",
+    price: 2500000,
+    propertySize: 105,
+    room: 4,
     image: require("../assets/house01.jpg"),
   },
   {
     id: 2,
-    title: "Couch in great condition",
-    price: 1000,
+    title: "Lägenhet med utsikt",
+    price: 1500000,
+    propertySize: 105,
+    room: 2,
     image: require("../assets/house02.jpg"),
   },
 ];
@@ -30,7 +34,9 @@ function ListingsScreen({ navigation }) {
         renderItem={({ item }) => (
           <Card
             title={item.title}
-            subTitle={"$" + item.price}
+            subTitle={item.price + " kr"}
+            propSize={item.propertySize + " kvm"}
+            room={item.room + " Rum"}
             image={item.image}
             onPress={() => navigation.navigate(routes.LISTING_DETAILS, item)}
           />
