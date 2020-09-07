@@ -8,6 +8,7 @@ import {
 } from "react-native";
 
 import colors from "../config/colors";
+import routes from "../navigation/routes";
 import ListItem from "../components/lists/ListItem";
 import Text from "../components/Text";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
@@ -19,7 +20,7 @@ function ListingDetailsScreen({ route, navigation, onPress }) {
   return (
     <View>
       <TouchableWithoutFeedback
-        onPress={() => navigation.navigate("ViewImageScreen")}
+        onPress={() => navigation.navigate(routes.VIEW_IMAGE, route.params)}
       >
         <View>
           <Image style={styles.image} source={listing.image}></Image>
