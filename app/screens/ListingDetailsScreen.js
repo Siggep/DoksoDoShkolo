@@ -41,12 +41,14 @@ function ListingDetailsScreen({ route, navigation, onPress }) {
       </View>
       <View style={styles.detailsContainer}>
         <Text style={styles.title}>{listing.title}</Text>
-        <Text style={styles.price}>${listing.price}</Text>
+        <Text style={styles.price}>{listing.price} kr</Text>
+        <Text style={styles.propSize}>{listing.propertySize} Kvm</Text>
+        <Text style={styles.room}>{listing.room} Rum</Text>
         <View style={styles.userContainer}>
           <ListItem
             image={require("../assets/mosh.jpg")}
-            title="Mosh Hamedani"
-            subTitle="5 Listings"
+            title="Sargon Poli"
+            subTitle="Sargonpoli@fastighetsbyrån.se"
           />
         </View>
       </View>
@@ -69,6 +71,18 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   price: {
+    color: colors.secondary,
+    fontWeight: "bold",
+    fontSize: 20,
+    marginVertical: 10,
+  },
+  propSize: {
+    color: colors.secondary,
+    fontWeight: "bold",
+    fontSize: 20,
+    marginVertical: 10,
+  },
+  room: {
     color: colors.secondary,
     fontWeight: "bold",
     fontSize: 20,
