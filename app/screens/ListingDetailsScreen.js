@@ -11,6 +11,7 @@ import colors from "../config/colors";
 import routes from "../navigation/routes";
 import ListItem from "../components/lists/ListItem";
 import Text from "../components/Text";
+import GoBackButton from "../components/GoBackButton";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import ViewImageScreen from "../screens/ViewImageScreen";
 
@@ -26,19 +27,7 @@ function ListingDetailsScreen({ route, navigation, onPress }) {
           <Image style={styles.image} source={listing.image}></Image>
         </View>
       </TouchableWithoutFeedback>
-      <View style={styles.listingButtonClose}>
-        <MaterialCommunityIcons
-          name="chevron-left"
-          size={40}
-          color="black"
-          onPress={() => navigation.goBack()}
-        />
-        <Button
-          color="black"
-          title="Tillbaka"
-          onPress={() => navigation.goBack()}
-        />
-      </View>
+      <GoBackButton navigation={navigation} />
       <View style={styles.detailsContainer}>
         <Text style={styles.title}>{listing.title}</Text>
         <Text style={styles.price}>{listing.price} kr</Text>
@@ -64,12 +53,12 @@ const styles = StyleSheet.create({
     width: "100%",
     height: 300,
   },
-  listingButtonClose: {
-    position: "absolute",
-    top: 40,
-    left: 10,
-    flexDirection: "row",
-  },
+  // listingButtonClose: {
+  //   position: "absolute",
+  //   top: 40,
+  //   left: 10,
+  //   flexDirection: "row",
+  // },
   price: {
     color: colors.secondary,
     fontWeight: "bold",
