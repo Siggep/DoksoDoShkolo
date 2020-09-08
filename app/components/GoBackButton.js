@@ -11,11 +11,11 @@ function GoBackButton({ navigation }) {
         color="black"
         onPress={() => navigation.goBack()}
       />
-      <Button
+      {/* <Button
         color="black"
         title="Tillbaka"
         onPress={() => navigation.goBack()}
-      />
+      /> */}
     </View>
   );
 }
