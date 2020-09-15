@@ -7,9 +7,8 @@ import LoginScreen from "./app/screens/LoginScreen";
 
 export default function App() {
   return (
-    <LoginScreen />
-    // <NavigationContainer theme={navigationTheme}>
-    //   <AppNavigator />
-    // </NavigationContainer>
+    <NavigationContainer theme={navigationTheme}>
+      <AppNavigator />
+    </NavigationContainer>
   );
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   View,
   Text,
@@ -12,66 +12,62 @@ import * as firebase from "firebase";
 
 import FirebaseConfig from "../firebase/config";
 
-export default class LoginScreen extends React.Component {
-  state = {
-    email: "",
-    password: "",
-    errorMessage: null,
-  };
-
-  handleLogin = () => {
-    const { email, password } = this.state;
-    if (firebase.auth().currentUser) {
-      navigation.navigate("Home");
-    }
-
-    firebase
-      .auth()
-      .signInWithEmailAndPassword(email, password)
-      .catch((error) => this.setState({ errorMessage: error.message }));
-  };
-
-  render() {
-    return (
-      <View style={styles.container}>
-        <SafeAreaView>
-          <Text style={styles.greeting}>{`Hello again. \nWelcome back.`}</Text>
-        </SafeAreaView>
-
-        <View style={styles.errorMessage}>
-          {this.state.errorMessage && (
-            <Text style={styles.error}>{this.state.errorMessage}</Text>
-          )}
-        </View>
-
-        <View style={styles.form}>
-          <View>
-            <Text style={styles.inputTitle}>Email Address</Text>
-            <TextInput
-              style={styles.input}
-              autoCapitalize="none"
-              onChangeText={(email) => this.setState({ email })}
-              value={this.state.email}
-            ></TextInput>
-          </View>
-
-          <View style={{ marginTop: 32 }}>
-            <Text style={styles.inputTitle}>Password</Text>
-            <TextInput
-              style={styles.input}
-              secureTextEntry
-              autoCapitalize="none"
-              onChangeText={(password) => this.setState({ password })}
-              value={this.state.password}
-            ></TextInput>
-          </View>
-        </View>
-        <TouchableOpacity style={styles.button} onPress={this.handleLogin}>
-          <Text style={{ color: "#FFF", fontWeight: "500" }}>Sign in</Text>
-        </TouchableOpacity>
-      </View>
-    );
+function handleLogin(email, password, navigation) {
+  firebase
+    .auth()
+    .signInWithEmailAndPassword(email, password)
+    .catch((error) => console.log(error));
+  if (firebase.auth().currentUser) {
+    navigation.navigate("Mitt Konto");
   }
+}
+
+function LoginScreen({ navigation }) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  return (
+    <View style={styles.container}>
+      <SafeAreaView>
+        <Text style={styles.greeting}>{`Hello again. \nWelcome back.`}</Text>
+      </SafeAreaView>
+
+      {/* <View style={styles.errorMessage}>
+        {this.state.errorMessage && (
+          <Text style={styles.error}>{this.state.errorMessage}</Text>
+        )}
+      </View> */}
+
+      <View style={styles.form}>
+        <View>
+          <Text style={styles.inputTitle}>Email Address</Text>
+          <TextInput
+            style={styles.input}
+            autoCapitalize="none"
+            onChangeText={setEmail}
+          ></TextInput>
+        </View>
+
+        <View style={{ marginTop: 32 }}>
+          <Text style={styles.inputTitle}>Password</Text>
+          <TextInput
+            style={styles.input}
+            secureTextEntry
+            autoCapitalize="none"
+            onChangeText={setPassword}
+          ></TextInput>
+        </View>
+      </View>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => {
+          handleLogin(email, password, navigation);
+        }}
+      >
+        <Text style={{ color: "#FFF", fontWeight: "500" }}>Sign in</Text>
+      </TouchableOpacity>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
@@ -181,4 +177,4 @@ const styles = StyleSheet.create({
 //   },
 // });
 
-// export default LoginScreen;
+export default LoginScreen;
