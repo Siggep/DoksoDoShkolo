@@ -14,10 +14,12 @@ class AccordionList extends React.Component {
 
   render() {
     return (
-      <List.Section style={{ backgroundColor: "transparent", width: "100%" }}>
+      <List.Section
+        style={{ backgroundColor: "transparent", width: "100%", zIndex: 1 }}
+      >
         <List.Accordion
           title="Price"
-          left={(props) => <List.Icon {...props} />}
+          style={{ marginRight: 10, marginLeft: 14 }}
         >
           <PriceSelect />
         </List.Accordion>

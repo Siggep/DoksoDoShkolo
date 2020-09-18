@@ -4,15 +4,14 @@ import { NavigationContainer } from "@react-navigation/native";
 import navigationTheme from "./app/navigation/navigationTheme";
 import AppNavigator from "./app/navigation/AppNavigator";
 import LoginScreen from "./app/screens/LoginScreen";
-import SquareSelect from "./app/components/FilterItems/SquareSelect";
 import AccordionList from "./app/components/AccordionList";
 import PriceSelect from "./app/components/FilterItems/PriceSelect";
 
 export default function App() {
   return (
-    <AccordionList />
-    // <NavigationContainer theme={navigationTheme}>
-    //   <AppNavigator />
-    // </NavigationContainer>
+    // <AccordionList />
+    <NavigationContainer theme={navigationTheme}>
+      <AppNavigator />
+    </NavigationContainer>
   );
 }

@@ -14,8 +14,7 @@ import Text from "./Text";
 import defaultStyles from "../config/styles";
 import PickerItem from "./PickerItem";
 import Screen from "./Screen";
-import PriceSelect from "./FilterItems/PriceSelect";
-import SquareSelect from "./FilterItems/SquareSelect";
+import AccordionList from "./AccordionList";
 
 function AppPicker({
   icon,
@@ -70,8 +69,8 @@ function AppPicker({
               ></TextInput>
             </View>
           </View>
-          <PriceSelect />
-          <SquareSelect />
+          <AccordionList />
+
           <FlatList
             data={items}
             keyExtractor={(item) => item.value.toString()}

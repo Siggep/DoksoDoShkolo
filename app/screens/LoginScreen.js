@@ -16,7 +16,7 @@ function handleLogin(email, password, navigation) {
   firebase
     .auth()
     .signInWithEmailAndPassword(email, password)
-    .catch((error) => console.log(error));
+    .catch((error) => alert(error));
   if (firebase.auth().currentUser) {
     navigation.navigate("Mitt Konto");
   }
@@ -31,12 +31,6 @@ function LoginScreen({ navigation }) {
       <SafeAreaView>
         <Text style={styles.greeting}>{`Hello again. \nWelcome back.`}</Text>
       </SafeAreaView>
-
-      {/* <View style={styles.errorMessage}>
-        {this.state.errorMessage && (
-          <Text style={styles.error}>{this.state.errorMessage}</Text>
-        )}
-      </View> */}
 
       <View style={styles.form}>
         <View>
