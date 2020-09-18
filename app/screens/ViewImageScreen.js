@@ -13,7 +13,7 @@ function ViewImageScreen({ navigation, route }) {
         <MaterialCommunityIcons
           name="close"
           color="white"
-          size={40}
+          size={33}
           onPress={() => navigation.goBack()}
         />
       </View>

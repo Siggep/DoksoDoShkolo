@@ -5,6 +5,7 @@ import Card from "../components/Card";
 import colors from "../config/colors";
 import routes from "../navigation/routes";
 import Screen from "../components/Screen";
+import Filter from "../components/Filter";
 
 const listings = [
   {
@@ -28,6 +29,7 @@ const listings = [
 function ListingsScreen({ navigation }) {
   return (
     <Screen style={styles.screen}>
+      <Filter />
       <FlatList
         data={listings}
         keyExtractor={(listing) => listing.id.toString()}
