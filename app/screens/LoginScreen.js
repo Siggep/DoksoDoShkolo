@@ -17,9 +17,14 @@ function handleLogin(email, password, navigation) {
     .auth()
     .signInWithEmailAndPassword(email, password)
     .catch((error) => alert(error));
-  if (firebase.auth().currentUser) {
-    navigation.navigate("Mitt Konto");
-  }
+
+  // navigation.navigate("Mitt Konto");
+  firebase.auth().onAuthStateChanged(function (user) {
+    if (firebase.auth().signInWithEmailAndPassword(email, password)) {
+      navigation.navigate("Mitt Konto");
+    } else {
+    }
+  });
 }
 
 function LoginScreen({ navigation }) {

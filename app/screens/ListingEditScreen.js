@@ -97,7 +97,21 @@ function ListingEditScreen() {
           keyboardType="numeric"
           maxLength={8}
           name="price"
-          placeholder="Price"
+          placeholder="Pris"
+          width={120}
+        />
+        <FormField
+          keyboardType="numeric"
+          maxLength={8}
+          name="Kvm"
+          placeholder="Boarea"
+          width={120}
+        />
+        <FormField
+          keyboardType="numeric"
+          maxLength={8}
+          name="Room"
+          placeholder="Antal rum"
           width={120}
         />
         <Picker
@@ -105,7 +119,7 @@ function ListingEditScreen() {
           name="category"
           numberOfColumns={3}
           PickerItemComponent={CategoryPickerItem}
-          placeholder="Category"
+          placeholder="Välj kategori"
           width="50%"
         />
         <FormField
@@ -113,7 +127,7 @@ function ListingEditScreen() {
           multiline
           name="description"
           numberOfLines={3}
-          placeholder="Description"
+          placeholder="Beskrivning"
         />
         <SubmitButton title="Post" />
       </Form>
